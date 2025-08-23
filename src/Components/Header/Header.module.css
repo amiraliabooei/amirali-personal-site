@@ -1,0 +1,228 @@
+.headerWrapperen{
+    direction: ltr;
+    width: 100%;
+    min-height: 100vh;
+
+    /* پس‌زمینه گرادیانت */
+    background: linear-gradient(to bottom, #0f172a, #061021);
+
+    /* رنگ متن */
+    color: white;
+
+    /* آنتی الیاس برای فونت‌ها */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: auto;
+
+
+}
+.headerNameBoxen{
+    font-size: 22px;
+    line-height: 1.25rem;
+    font-weight: 600;
+
+}
+.headerUlNaven{
+    display: flex;
+
+}
+.headerUlenPc{
+    display: flex;
+    align-items: center;
+}
+.headerNameen{
+    /*display: flex;*/
+    /*align-items: center;*/
+    padding-top: 7px;
+
+}
+.headerUlNaven a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
+}
+.headerDownloadResume{
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 0.375rem; /* rounded-md */
+    background-color: rgba(255, 255, 255, 0.05); /* bg-white/5 */
+    padding: 0.5rem 0.75rem;
+    transition: background-color 0.2s ease;
+
+
+}
+.headerDownloadResume:hover{
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.headerDownloadResumeIcon{
+    margin-top: -4px;
+    padding-right: 5px ;
+}
+.headerUlenMobile{
+    display: none;
+}
+.headerUlenMobileIcon{
+    padding: 0.5rem; /* p-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.headerUlenMobileBox {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    display: none;
+}
+/*#headerUlenMobileBox{*/
+/*    display: none;*/
+/*}*/
+.headerUlenMobileBox.open {
+    max-height: 500px; /* یا هر مقداری که محتوای شما نیاز دارد */
+}
+
+@media (max-width: 767px) {
+    .headerUlenMobileBox{
+        display: block;
+    }
+    .headerUlenPc{
+        display: none;
+    }
+    .headerUlenMobile{
+        display: flex;
+        align-items: center;
+        /*width: 100%;*/
+        /*align-items: center;*/
+
+    }
+    .headerUlenMobileBox{
+        position: fixed;
+
+        background-color: #061021;
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding: 10px;
+        height: auto;
+
+    }
+    .headerUlNavenMobile{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .headerUlNavenMobile a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .headerDownloadResumeMobile{
+        display: flex;
+        justify-content: center;
+
+        border-radius: 0.375rem; /* rounded-md */
+        background-color: rgba(255, 255, 255, 0.05); /* bg-white/5 */
+        padding: 0.5rem 0.75rem;
+        transition: background-color 0.2s ease;
+
+
+    }
+    .headerDownloadResumeMobile:hover{
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+    .headerDownloadResumeIconMobile{
+        margin-top: -3px;
+        padding-right: 10px ;
+    }
+    .headerUlNavNameenMobile{
+        font-size: 22px;
+        line-height: 1.25rem;
+        font-weight: 600;
+    }
+    .headerUlNavTitleenMobile{
+        font-size: 0.75rem;
+        line-height: 1rem;
+
+        margin-top: -5px;
+
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+.headerTitleen{
+        font-size: 0.75rem;
+        line-height: 1rem;
+
+        margin-top: -5px;
+
+        color: rgba(255, 255, 255, 0.6);
+
+}
+.headerWrapperen header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    /* پس‌زمینه مشکی نیمه‌شفاف */
+    background-color: rgba(0, 0, 0, 0.3);
+
+    /* تار کردن پشت زمینه */
+    backdrop-filter: blur(12px);
+
+    /* خط پایین سفید خیلی کم‌رنگ */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: auto;
+    padding: 15px 0px ;
+}
+.headerWrapperen section{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*Farsi*/
+
+.headerWrapperfa{
+    direction: rtl;
+    width: 100%;
+    min-height: 100vh;
+
+    /* پس‌زمینه گرادیانت */
+    background: linear-gradient(to bottom, #0f172a, #061021);
+
+    /* رنگ متن */
+    color: white;
+
+    /* آنتی الیاس برای فونت‌ها */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: auto;
+}
+.headerWrapperfa header{
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    /* پس‌زمینه مشکی نیمه‌شفاف */
+    background-color: rgba(0, 0, 0, 0.3);
+
+    /* تار کردن پشت زمینه */
+    backdrop-filter: blur(12px);
+
+    /* خط پایین سفید خیلی کم‌رنگ */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: auto;
+    /*padding: 1;*/
+}
+.headerWrapperfa section{
+    display: flex;
+    justify-content: space-between;
+}

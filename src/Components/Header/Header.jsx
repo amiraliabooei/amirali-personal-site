@@ -35,8 +35,12 @@ export default function Header({ data }) {
                         <div className="container">
                             <section>
                                 <div className={styled.headerNameen}>
-                                    <p className={styled.headerNameBoxen}>{data.name}</p>
-                                    <p className={styled.headerTitleen}>{data.title}</p>
+                                    <div className={styled.headerIconA}>A</div>
+                                    <div>
+                                        <p className={styled.headerNameBoxen}>{data.name}</p>
+                                        <p className={styled.headerTitleen}>{data.title}</p>
+                                    </div>
+
                                 </div>
 
                                 <div className={styled.headerUlenPc}>
@@ -77,8 +81,11 @@ export default function Header({ data }) {
                                 >
                                     <nav className={styled.headerUlNavenMobile}>
                                         <div className={styled.headerUlNavNameBoxenMobile}>
-                                            <p className={styled.headerUlNavNameenMobile}>{data.name}</p>
-                                            <p className={styled.headerUlNavTitleenMobile}>{data.title}</p>
+                                            <div className={styled.headerIconA}>A</div>
+                                            <div>
+                                                <p className={styled.headerNameBoxen}>{data.name}</p>
+                                                <p className={styled.headerTitleen}>{data.title}</p>
+                                            </div>
                                         </div>
                                         <a href="#about">About</a>
                                         <a href="#skills">Skills</a>

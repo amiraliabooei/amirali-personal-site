@@ -1,0 +1,138 @@
+.heroWrapper{
+    margin-top: 150px;
+}
+.heroInfoCityBox{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #ddd;
+}
+
+.heroInfo{
+    background: linear-gradient(90deg, #ff4f8b, #6a5cff);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px; /* بیضی کامل */
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 12px;
+    display: inline-block;
+    text-align: center;
+}
+
+.heroCity{
+    font-size: 14px;
+    color: #bbb;
+    text-align: justify;
+}
+.heroCity span{
+    margin: 0 4px;
+}
+.heroIntroduce{
+    padding: 20px;
+}
+.heroIntroduce h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+    .heroIntroduce h1{
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+}
+@media (max-width: 767px) {
+    .heroIntroduce h1{
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-align: center;
+    }
+}
+
+.heroNameGradiant {
+    background: linear-gradient(to right, #fbbf24, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroNameAmber {
+    color: #fcd34d;
+}
+
+.heroNamePink {
+    color: #f472b6;
+}
+.heroIntroduceInfo p{
+    padding: 20px;
+    margin-top: -1rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 55rem;
+}
+.heroIntroduceContactAndSeeProjects{
+    margin-top: -1rem;
+    display: flex;
+    gap: 1rem;
+    padding: 20px;
+}
+.heroIntroduceContactAndSeeProjects a{
+    text-decoration: none;
+}
+.heroContact{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem; /* فاصله داخلی بین آیکون یا متن */
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, #ec4899, #f59e0b); /* از صورتی تا کهربایی */
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease-in-out;
+}
+
+.heroContact:hover {
+    transform: scale(1.02);
+}
+
+.heroSeeProjects{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background 0.2s ease-in-out;
+}
+.heroSeeProjects:hover{
+    background: rgba(255, 255, 255, 0.03);
+}
+.heroMailAndPhone{
+    margin-top: -1rem;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;            /* فاصله بین آیتم‌ها */
+    font-size: 1rem;     /* text-xs */
+    color: rgba(255, 255, 255, 0.7);
+}
+.heroContactItem{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.heroContactItem a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+
+}
+.heroIcon{
+    font-size: 14px;
+}

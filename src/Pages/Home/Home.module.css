@@ -6,3 +6,20 @@
 /*    !*justify-content: center;*!*/
 /*    !*align-items: center;*!*/
 /*}*/
+.homeWrapper{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    /* پس‌زمینه گرادیانت */
+    background: linear-gradient(to bottom, #0f172a, #061021);
+
+    /* رنگ متن */
+    color: white;
+
+    /* آنتی الیاس برای فونت‌ها */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: auto;
+
+}

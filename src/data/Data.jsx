@@ -5,7 +5,7 @@ export const texts = {
         lan: 'en',
         name: 'AmirAli Abooei',
         title: 'Software Developer & Full-Stack Developer',
-        location: 'Yazd, Iran',
+        location: 'YAZD, IRAN',
         experience: 'Since 2018',
         aboutTitle: 'About',
         aboutText: "I'm a web developer and UI/UX designer from Yazd. I started programming in 2018 and went professional in 2020. I work as a freelancer building web apps and designs — if you have a project, let's talk.",

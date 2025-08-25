@@ -1,4 +1,4 @@
-
+import PersonalImage from '../../assets/Image.png'
 import  Styled from './Hero.module.css'
 // import styled from "../Header/Header.module.css";
 export default function Hero(props){
@@ -9,7 +9,7 @@ export default function Hero(props){
                     <div className={Styled.heroWrapper}>
                         <div className="container">
                             <div className="row">
-                                <div className="col-xxl-7">
+                                <div className="col-xxl-7 col-xl-7 col-md-12 col-sm-12">
                                     <div className={Styled.heroNameBox}>
                                         <div className={Styled.heroInfoCityBox}>
                                             <div className={Styled.heroInfo}>Full-Stack & Software Developer</div>
@@ -59,7 +59,13 @@ export default function Hero(props){
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-xxl-5">dgs</div>
+                                <div className="col-xxl-5 col-xl-5 col-md-12 col-sm-12">
+                                    <div className={Styled.heroImageWrapper}>
+                                        <div className={Styled.heroImageBox}>
+                                            <img src={PersonalImage} alt="AmiraliAbooei" className={Styled.heroImage}/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

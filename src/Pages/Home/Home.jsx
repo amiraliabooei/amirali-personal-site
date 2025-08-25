@@ -3,6 +3,7 @@ import { texts } from '../../data/Data.jsx'; // حتما export درست باش�
 import Header from "../../Components/Header/Header.jsx";
 import Styled from './Home.module.css';
 import Hero from "../../Components/Hero/Hero.jsx";
+import ChangeTitle from "../../Components/ChangeTitle/ChangeTitle.jsx";
 
 export default function Home({ language }) {
     const [text, setText] = useState(texts.en); // مقدار اولیه مناسب
@@ -14,6 +15,7 @@ export default function Home({ language }) {
 
     return (
         <div className={Styled.homeWrapper}>
+            <ChangeTitle title={'Amirali Abooei'} />
             <Header data={text} />
             <Hero data={text}/>
         </div>

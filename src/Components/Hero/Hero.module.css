@@ -54,6 +54,9 @@
         letter-spacing: -0.02em;
         text-align: center;
     }
+    .heroWrapper{
+        margin-top: 120px;
+    }
 }
 
 .heroNameGradiant {
@@ -135,4 +138,38 @@
 }
 .heroIcon{
     font-size: 14px;
+}
+.heroImageWrapper{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.heroImageBox{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heroImage{
+    width: 80%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    animation: float 5s ease-in-out infinite;
+}
+@media (max-width: 1399px) {
+    .heroImage{
+        width: 95%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }

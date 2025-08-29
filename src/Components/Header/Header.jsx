@@ -45,7 +45,7 @@ export default function Header({ data }) {
 
                                 <div className={styled.headerUlenPc}>
                                     <nav className={styled.headerUlNaven}>
-                                        <a href="#about">About</a>
+                                        <a href="#About">About</a>
                                         <a href="#skills">Skills</a>
                                         <a href="#projects">Projects</a>
                                         <a href="#contact">Contact</a>
@@ -87,7 +87,7 @@ export default function Header({ data }) {
                                                 <p className={styled.headerTitleen}>{data.title}</p>
                                             </div>
                                         </div>
-                                        <a href="#about">About</a>
+                                        <a href="#About">About</a>
                                         <a href="#skills">Skills</a>
                                         <a href="#projects">Projects</a>
                                         <a href="#contact">Contact</a>

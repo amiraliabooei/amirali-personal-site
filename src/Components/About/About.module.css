@@ -1,0 +1,139 @@
+.aboutWrapper{
+    margin-top: 100px;
+    line-height: 1.6;
+}
+.aboutWrapper section{
+    /*padding: 20px;*/
+}
+.AboutBox{
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.AboutBoxWrapper{
+    padding: 20px;
+}
+.AboutBox h2{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.AboutBox p{
+    margin-top:1rem;
+    color:rgba(255,255,255,0.8);
+    font-size: 1rem;
+}
+
+.aboutLocationAndExperiance{
+    margin-top: 1.5rem;
+}
+.aboutLocationAndExperianceLable{
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+}
+.aboutLocationAndExperianceValue{
+    font-weight: 500;
+}
+.AboutBoxLinks{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+.AboutBoxLinks a{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.AboutBoxLinks a:hover {
+    background: rgba(255,255,255,0.1);
+}
+.topSkillsWrapper{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.topSkillsBox{
+    background: linear-gradient(to bottom right, #071127, #081226);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    width: 90%;
+}
+@media (max-width: 1199px) {
+    .aboutWrapper{
+        margin-top: 50px;
+    }
+    .topSkillsBox{
+        background: linear-gradient(to bottom right, #071127, #081226);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        width: 100%;
+    }
+    .certificatesBox{
+        background: linear-gradient(to bottom right, #071127, #081226);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        width: 100%;
+    }
+    .certificatesWrapper{
+        display: flex;
+        align-items: center;
+    }
+    .topSkillsWrapper{
+        /*padding: 20px;*/
+        display: flex;
+        align-items: center;
+    }
+}
+.topSkillsBoxLable{
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+}
+.topSkillsItem{
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+.topSkillsItem .Name{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.topSkillsItem .Level{
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}
+.topSkillsBoxItems{
+    /*margin-top: 1.5rem;*/
+}
+.certificatesWrapper{
+    margin-top: 1.5rem;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.certificatesBox{
+    background: linear-gradient(to bottom right, #071127, #081226);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    width: 90%;
+    color: rgba(255,255,255,0.6);
+}
+.certificatesBoxLabel{
+    font-size: 1rem;
+}
+.certificatesBoxText{
+    font-size: 0.75rem;
+}

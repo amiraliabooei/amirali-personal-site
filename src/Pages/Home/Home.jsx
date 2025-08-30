@@ -5,6 +5,7 @@ import Styled from './Home.module.css';
 import Hero from "../../Components/Hero/Hero.jsx";
 import ChangeTitle from "../../Components/ChangeTitle/ChangeTitle.jsx";
 import About from "../../Components/About/About.jsx";
+import Skills from "../../Components/Skills/Skills.jsx";
 
 export default function Home({ language }) {
     const [text, setText] = useState(texts.en); // مقدار اولیه مناسب
@@ -21,7 +22,7 @@ export default function Home({ language }) {
             <Hero data={text}/>
 
             <About data={text}/>
-
+            <Skills data={text} />
 
         </div>
     );

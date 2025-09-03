@@ -7,6 +7,7 @@ import ChangeTitle from "../../Components/ChangeTitle/ChangeTitle.jsx";
 import About from "../../Components/About/About.jsx";
 import Skills from "../../Components/Skills/Skills.jsx";
 import SelectedProjects from "../../Components/SelectedProjects/SelectedProjects.jsx";
+import ContactBox from "../../Components/ContactBox/ContactBox.jsx";
 
 export default function Home({ language }) {
     const [text, setText] = useState(texts.en); // مقدار اولیه مناسب
@@ -25,6 +26,7 @@ export default function Home({ language }) {
             <About data={text}/>
             <Skills data={text} />
             <SelectedProjects data={text}/>
+            <ContactBox data={text} />
 
         </div>
     );

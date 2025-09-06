@@ -7,6 +7,8 @@ export default function Hero(props){
             return (
                 <>
                     <div className={Styled.heroWrapper}>
+
+                        <div className={Styled.heroMT}></div>
                         <div className="container">
                             <div className="row">
                                 <div className="col-xxl-7 col-xl-7 col-md-12 col-sm-12">

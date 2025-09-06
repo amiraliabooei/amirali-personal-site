@@ -1,5 +1,5 @@
 .heroWrapper{
-    margin-top: 150px;
+    margin-top: 200px;
 }
 .heroInfoCityBox{
     display: flex;
@@ -7,7 +7,14 @@
     padding: 20px;
     color: #ddd;
 }
-
+.heroMT{
+    height: 180px;
+}
+@media (max-width: 767px) {
+    .heroMT{
+        height: 200px;
+    }
+}
 .heroInfo{
     background: linear-gradient(90deg, #ff4f8b, #6a5cff);
     color: white;

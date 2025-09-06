@@ -9,13 +9,15 @@
 .homeWrapper{
     width: 100%;
     min-height: 100vh;
-    position: absolute;
-    top: 0;
+    position: relative;
+    /*top: 0;*/
+    /*right: 0;*/
     /* پس‌زمینه گرادیانت */
     background: linear-gradient(to bottom, #0f172a, #061021);
 
     /* رنگ متن */
     color: white;
+    margin-top: -216px;
 
     /* آنتی الیاس برای فونت‌ها */
     -webkit-font-smoothing: antialiased;

@@ -71,6 +71,8 @@
   margin: 0;
   /*padding: 0;*/
   /*direction: rtl;*/
+  /*position: absolute;*/
+  /*right: 0;*/
   box-sizing: border-box;
 }
 
@@ -81,5 +83,11 @@
 
 body {
   font-family: "MyFont" ;
+  /*position: absolute;*/
+  /*right: 0;*/
+
 }
 
+html, body {
+  overflow-x: hidden;
+}

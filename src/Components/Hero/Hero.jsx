@@ -14,13 +14,13 @@ export default function Hero(props){
                                 <div className="col-xxl-7 col-xl-7 col-md-12 col-sm-12">
                                     <div className={Styled.heroNameBox}>
                                         <div className={Styled.heroInfoCityBox}>
-                                            <div className={Styled.heroInfo}>Full-Stack & Software Developer</div>
-                                            <div className={Styled.heroCity}>Freelancer <span>•</span> YAZD</div>
+                                            <div className={Styled.heroInfo}>{props.data.role_Hero}</div>
+                                            <div className={Styled.heroCity}>{props.data.simpleRole} <span>•</span> {props.data.location}</div>
                                         </div>
 
                                         <div className={Styled.heroIntroduce}>
                                             <h1>
-                                                Hi, I'm <span className={Styled.heroNameGradiant}>AmirAli Abooei</span>
+                                                Hi, I'm <span className={Styled.heroNameGradiant}>{props.data.name}</span>
                                                 <br/>
                                                 I build <span className={Styled.heroNameAmber}>modern</span> Web apps <br/> and <span
                                                 className={Styled.heroNamePink}>interactive</span> <br/> software products.
@@ -29,12 +29,12 @@ export default function Hero(props){
 
                                         <div className={Styled.heroIntroduceInfo}>
                                             <p>
-                                                Web developer, Software Developer and freelancer. Experienced with Django, React, Bootstrap and modern tooling — I turn ideas into fast, polished products.
+                                                {props.data.heroText}
                                             </p>
                                         </div>
                                         <div className={Styled.heroIntroduceContactAndSeeProjects}>
                                             <a href="#contact" className={Styled.heroContact}>Contact Me</a>
-                                            <a href="/portfolio" className={Styled.heroSeeProjects}>See Projects</a>
+                                            <a href="#projects" className={Styled.heroSeeProjects}>See Projects</a>
                                         </div>
 
                                         <div className={Styled.heroMailAndPhone}>

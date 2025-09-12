@@ -1,7 +1,7 @@
 import styled from './Header.module.css';
 import { useState, useRef, useEffect } from "react";
 
-export default function Header({ data }) {
+export default function Header({ data, element }) {
     const [isOpenMenuMobile, setisOpenMenuMobile] = useState(false);
     const menuRef = useRef(null); // رفرنس برای منو
 
@@ -35,10 +35,10 @@ export default function Header({ data }) {
                         <div className="container">
                             <section>
                                 <div className={styled.headerNameen}>
-                                    <div className={styled.headerIconA}>A</div>
+                                    <div className={styled.headerIconA}>{element.name[0]}</div>
                                     <div>
-                                        <p className={styled.headerNameBoxen}>{data.name}</p>
-                                        <p className={styled.headerTitleen}>{data.title}</p>
+                                        <p className={styled.headerNameBoxen}>{element.name}</p>
+                                        <p className={styled.headerTitleen}>{element.headerNameLable}</p>
                                     </div>
 
                                 </div>
@@ -81,10 +81,10 @@ export default function Header({ data }) {
                                 >
                                     <nav className={styled.headerUlNavenMobile}>
                                         <div className={styled.headerUlNavNameBoxenMobile}>
-                                            <div className={styled.headerIconA}>A</div>
+                                            <div className={styled.headerIconA}>{element.name[0]}</div>
                                             <div>
-                                                <p className={styled.headerNameBoxen}>{data.name}</p>
-                                                <p className={styled.headerTitleen}>{data.title}</p>
+                                                <p className={styled.headerNameBoxen}>{element.name}</p>
+                                                <p className={styled.headerTitleen}>{element.headerNameLable}</p>
                                             </div>
                                         </div>
                                         <a href="#About">About</a>

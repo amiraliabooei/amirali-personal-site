@@ -17,6 +17,7 @@ export default function Home({ language }) {
     const [socialNetworks, setSocialNetworks] = useState([]);
     const [topSkills, setTopSkills] = useState([]);
     const [projects, setProjects] = useState([]);
+    const [footerSocials, setfooterSocials] = useState([]);
 
     useEffect(() => {
         if (language === 'en') setText(texts.en);
@@ -50,6 +51,12 @@ export default function Home({ language }) {
             .catch(err => console.error(err));
     }, []);
 
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/footer-socials/")
+            .then(res => setfooterSocials(res.data))
+            .catch(err => console.error(err));
+    }, []);
+
     if (!element)  return <p>Loading...</p>;
 
     return (
@@ -60,8 +67,8 @@ export default function Home({ language }) {
             <About data={text} element={element} socialNetworks={socialNetworks} TopSkills={topSkills} />
             <Skills data={text} element={element} skills={topSkills} />
             <SelectedProjects data={text} element={element} projects={projects} />
-            <ContactBox data={text} element={element} />
-            <Footer data={text} element={element}  />
+            <ContactBox data={text} element={element} socialNetworks={socialNetworks} />
+            <Footer data={text} element={element} socials={footerSocials}  />
         </div>
     );
 }

@@ -56,21 +56,28 @@ export default function ContactBox(props) {
                                     </p>
 
                                     <div className={Styled.ContactInfo}>
-                                        <a className={Styled.InfoBox} href="mailto:amiraliabooei@gmail.com">
+                                        <a className={Styled.InfoBox} href={'mailto:'+ props.element.Email}>
                                             <div className={Styled.InfoLable}>Email</div>
-                                            <div className={Styled.InfoValue}>Amiraliabooei@gmail.com</div>
+                                            <div className={Styled.InfoValue}>{props.element.Email}</div>
                                         </a>
 
-                                        <a className={Styled.InfoBox} href="tel:+989912162483">
+                                        <a className={Styled.InfoBox} href={'tel:' + props.element.Phone}>
                                             <div className={Styled.InfoLable}>Phone</div>
-                                            <div className={Styled.InfoValue}>09912162483</div>
+                                            <div className={Styled.InfoValue}>{props.element.Phone}</div>
                                         </a>
 
                                         <div className={Styled.ContactLinks}>
-                                            <a href="https://t.me/">Telegram</a>
-                                            <a href="https://www.linkedin.com/">LinkedIn</a>
-                                            <a href="https://www.instagram.com/">Instagram</a>
-                                            <a href="https://www.youtube.com/">Youtube</a>
+                                            {props.socialNetworks.map(social => (
+                                                <a
+                                                    key={social.id}
+                                                    href={social.Link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    {social.name}
+                                                </a>
+                                            ))}
+
                                         </div>
                                     </div>
                                 </div>

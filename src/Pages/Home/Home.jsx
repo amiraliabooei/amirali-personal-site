@@ -1,3 +1,4 @@
+import Loading from "../../Components/Loading/Loading.jsx";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { texts } from '../../data/Data.jsx';
@@ -17,7 +18,7 @@ export default function Home({ language }) {
     const [socialNetworks, setSocialNetworks] = useState([]);
     const [topSkills, setTopSkills] = useState([]);
     const [projects, setProjects] = useState([]);
-    const [footerSocials, setfooterSocials] = useState([]);
+    const [footerSocials, setFooterSocials] = useState([]);
 
     useEffect(() => {
         if (language === 'en') setText(texts.en);
@@ -31,44 +32,44 @@ export default function Home({ language }) {
                 setElement(latest);
             })
             .catch(err => console.error(err));
-    }, []);
 
-    useEffect(() => {
         axios.get('http://localhost:8000/api/socials/')
             .then(res => setSocialNetworks(res.data))
             .catch(err => console.error(err));
-    }, []);
 
-    useEffect(() => {
         axios.get("http://localhost:8000/api/skills/")
             .then(res => setTopSkills(res.data))
             .catch(err => console.error(err));
-    }, []);
 
-    useEffect(() => {
         axios.get("http://localhost:8000/api/projects/")
             .then(res => setProjects(res.data))
             .catch(err => console.error(err));
-    }, []);
 
-    useEffect(() => {
         axios.get("http://localhost:8000/api/footer-socials/")
-            .then(res => setfooterSocials(res.data))
+            .then(res => setFooterSocials(res.data))
             .catch(err => console.error(err));
     }, []);
 
-    if (!element)  return <p>Loading...</p>;
+    const isLoading =
+        !element ||
+        socialNetworks.length === 0 ||
+        topSkills.length === 0 ||
+        projects.length === 0 ||
+        footerSocials.length === 0;
+
+    if (isLoading) return <Loading/>
+        ;
 
     return (
         <div className={Styled.homeWrapper}>
             <ChangeTitle title={'Amirali Abooei'} />
-            <Header data={text} element={element}  />
+            <Header data={text} element={element} />
             <Hero data={text} element={element} />
             <About data={text} element={element} socialNetworks={socialNetworks} TopSkills={topSkills} />
             <Skills data={text} element={element} skills={topSkills} />
             <SelectedProjects data={text} element={element} projects={projects} />
             <ContactBox data={text} element={element} socialNetworks={socialNetworks} />
-            <Footer data={text} element={element} socials={footerSocials}  />
+            <Footer data={text} element={element} socials={footerSocials} />
         </div>
     );
 }

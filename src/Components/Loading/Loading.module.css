@@ -1,0 +1,38 @@
+
+.loader {
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #8b5cf6;
+    box-shadow: 0 0 0 0 #fbbf24;
+    animation: l2 1.5s infinite linear;
+    position: relative;
+}
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #ec4899;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+.loader:after {
+    animation-delay: -1s;
+}
+@keyframes l2 {
+    100% {box-shadow: 0 0 0 40px #0000}
+}
+
+
+.LoaderWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #0f172a, #061021 );
+    backdrop-filter: blur(0.4);
+    position: fixed;
+}

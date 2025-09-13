@@ -2,6 +2,8 @@ import Styled from './About.module.css'
 import PersonalImage from "../../assets/Image.png";
 
 export default function About(props){
+    const topSkills = props.TopSkills.filter(skill => skill.skillTopStatus === true);
+
     switch (props.data.lan) {
         case 'en':
             return (
@@ -73,42 +75,14 @@ export default function About(props){
                                                 <div className={Styled.topSkillsBoxLable}>Top skills</div>
                                                 <div className={Styled.topSkillsBoxItems}>
                                                     <div className="row">
-                                                        <div className="col-6">
-                                                            <div className={Styled.topSkillsItem}>
-                                                                <div className={Styled.Name}>HTML</div>
-                                                                <div className={Styled.Level}>Advanced</div>
+                                                        {topSkills.map(skill => (
+                                                            <div className="col-6" key={skill.id}>
+                                                                <div className={Styled.topSkillsItem}>
+                                                                    <div className={Styled.Name}>{skill.slillName}</div>
+                                                                    <div className={Styled.Level}>{skill.skillLevel}</div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="col-6">
-                                                            <div className={Styled.topSkillsItem}>
-                                                                <div className={Styled.Name}>CSS</div>
-                                                                <div className={Styled.Level}>Advanced</div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-6">
-                                                            <div className={Styled.topSkillsItem}>
-                                                                <div className={Styled.Name}>JavaScript</div>
-                                                                <div className={Styled.Level}>Advanced</div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-6">
-                                                            <div className={Styled.topSkillsItem}>
-                                                                <div className={Styled.Name}>Python</div>
-                                                                <div className={Styled.Level}>Advanced</div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-6">
-                                                            <div className={Styled.topSkillsItem}>
-                                                                <div className={Styled.Name}>Django</div>
-                                                                <div className={Styled.Level}>proficient</div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-6">
-                                                            <div className={Styled.topSkillsItem}>
-                                                                <div className={Styled.Name}>React</div>
-                                                                <div className={Styled.Level}>proficient</div>
-                                                            </div>
-                                                        </div>
+                                                        ))}
                                                     </div>
                                                 </div>
 

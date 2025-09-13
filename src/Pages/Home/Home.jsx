@@ -14,7 +14,8 @@ import Footer from "../../Components/Footer/Footer.jsx";
 export default function Home({ language }) {
     const [text, setText] = useState(texts.en);
     const [element, setElement] = useState(null);
-    const [socialNetworks, setSocialNetworks] = useState([]); // برای سوشیال‌ها
+    const [socialNetworks, setSocialNetworks] = useState([]);
+    const [topSkills, setTopSkills] = useState([]);
 
     // تغییر زبان
     useEffect(() => {
@@ -38,7 +39,13 @@ export default function Home({ language }) {
             .then(res => setSocialNetworks(res.data))
             .catch(err => console.error(err));
     }, []);
-    // console.log(socialNetworks)
+
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/skills/")
+            .then(res => setTopSkills(res.data))
+            .catch(err => console.error(err));
+    }, []);
+
     if (!element) return <p>Loading...</p>;
 
     return (
@@ -46,7 +53,7 @@ export default function Home({ language }) {
             <ChangeTitle title={'Amirali Abooei'} />
             <Header data={text} element={element}  />
             <Hero data={text} element={element} />
-            <About data={text} element={element} socialNetworks={socialNetworks} />
+            <About data={text} element={element} socialNetworks={socialNetworks} TopSkills={topSkills} />
             <Skills data={text} element={element} />
             <SelectedProjects data={text} element={element} />
             <ContactBox data={text} element={element} />

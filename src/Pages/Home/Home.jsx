@@ -54,7 +54,7 @@ export default function Home({ language }) {
             <Header data={text} element={element}  />
             <Hero data={text} element={element} />
             <About data={text} element={element} socialNetworks={socialNetworks} TopSkills={topSkills} />
-            <Skills data={text} element={element} />
+            <Skills data={text} element={element} skills={topSkills} />
             <SelectedProjects data={text} element={element} />
             <ContactBox data={text} element={element} />
             <Footer data={text} element={element}  />

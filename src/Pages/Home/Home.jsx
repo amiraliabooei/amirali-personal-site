@@ -13,7 +13,8 @@ import Footer from "../../Components/Footer/Footer.jsx";
 
 export default function Home({ language }) {
     const [text, setText] = useState(texts.en);
-    const [element, setElement] = useState(null); // این برای PageElement آخر هست
+    const [element, setElement] = useState(null);
+    const [socialNetworks, setSocialNetworks] = useState([]); // برای سوشیال‌ها
 
     // تغییر زبان
     useEffect(() => {
@@ -21,30 +22,35 @@ export default function Home({ language }) {
         else if (language === 'fa') setText(texts.fa);
     }, [language]);
 
-    // گرفتن آخرین PageElement
+    // گرفتن Page Elements
     useEffect(() => {
         axios.get('http://localhost:8000/api/page-elements/')
             .then(res => {
                 const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
-                setElement(latest);        // **اینجا element ست میشه**
-                // setText(latest);           // اگر میخوای text هم آپدیت شه
+                setElement(latest);
             })
             .catch(err => console.error(err));
     }, []);
 
-    // فقط وقتی element لود شد نمایش بده
+    // گرفتن Social Networks
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/socials/') // مسیر API سوشیال‌ها
+            .then(res => setSocialNetworks(res.data))
+            .catch(err => console.error(err));
+    }, []);
+    // console.log(socialNetworks)
     if (!element) return <p>Loading...</p>;
 
     return (
         <div className={Styled.homeWrapper}>
             <ChangeTitle title={'Amirali Abooei'} />
-            <Header data={text} element={element} />
-            <Hero data={text} element={element}/>
-            <About data={text} element={element}/>
+            <Header data={text} element={element}  />
+            <Hero data={text} element={element} />
+            <About data={text} element={element} socialNetworks={socialNetworks} />
             <Skills data={text} element={element} />
-            <SelectedProjects data={text} element={element}/>
+            <SelectedProjects data={text} element={element} />
             <ContactBox data={text} element={element} />
-            <Footer data={text} element={element} />
+            <Footer data={text} element={element}  />
         </div>
     );
 }

@@ -17,7 +17,7 @@ export default function About(props){
                                                     About
                                                 </h2>
                                                 <p>
-                                                    I'm a web and software developer and UI/UX designer from Yazd. I started programming in 2018 and went professional in 2020. I work as a freelancer building web apps and designs — if you have a project, let's talk.
+                                                    {props.element.aboutText}
                                                 </p>
                                                 <div className={Styled.aboutLocationAndExperiance}>
                                                     <div className="row">
@@ -26,8 +26,7 @@ export default function About(props){
                                                                 className={Styled.aboutLocationAndExperianceLable}>Location
                                                             </div>
                                                             <div
-                                                                className={Styled.aboutLocationAndExperianceValue}>Yazd,
-                                                                Iran
+                                                                className={Styled.aboutLocationAndExperianceValue}>{props.element.aboutLocation}
                                                             </div>
                                                         </div>
                                                         <div className="col-6">
@@ -37,19 +36,32 @@ export default function About(props){
                                                             </div>
                                                             <div
                                                                 className={Styled.aboutLocationAndExperianceValue}>
-                                                                Since 2018
+                                                                {props.element.aboutExperience}
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className={Styled.AboutBoxLinks}>
-
-                                                        <a href="https://youtube.com/@programmingwithamirali">Youtube</a>
-                                                        <a href="https://t.me/AAA_B_I">Telegram</a>
-                                                        <a href="https://www.linkedin.com/">LinkedIn</a>
-                                                        <a href="https://www.instagram.com/">Instagram</a>
-
+                                                    {props.socialNetworks.map(social => (
+                                                        <a
+                                                            key={social.id}
+                                                            href={social.Link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
+                                                            {social.name}
+                                                        </a>
+                                                    ))}
                                                 </div>
+                                                {/*<div className={Styled.AboutBoxLinks}>*/}
+                                                {/*    {}*/}
+
+                                                {/*        <a href="https://youtube.com/@programmingwithamirali">Youtube</a>*/}
+                                                {/*        <a href="https://t.me/AAA_B_I">Telegram</a>*/}
+                                                {/*        <a href="https://www.linkedin.com/">LinkedIn</a>*/}
+                                                {/*        <a href="https://www.instagram.com/">Instagram</a>*/}
+
+                                                {/*</div>*/}
 
 
                                             </div>
@@ -106,7 +118,7 @@ export default function About(props){
                                         <div className={Styled.certificatesWrapper}>
                                             <div className={Styled.certificatesBox}>
                                                 <div className={Styled.certificatesBoxLabel}>Certificates</div>
-                                                <div className={Styled.certificatesBoxText}>Hamarh Aval, Khwarazmi awards and others.</div>
+                                                <div className={Styled.certificatesBoxText}>{props.element.certificates}</div>
                                             </div>
                                         </div>
                                     </div>

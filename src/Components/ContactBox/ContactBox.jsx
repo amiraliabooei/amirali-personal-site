@@ -52,7 +52,7 @@ export default function ContactBox(props) {
                                 <div className={Styled.ContactSection}>
                                     <h3 className={Styled.ContactTitle}>Let's build something</h3>
                                     <p className={Styled.ContactDesc}>
-                                        Tell me about your idea. I handle design, development and deployment.
+                                        {props.element.contactText}
                                     </p>
 
                                     <div className={Styled.ContactInfo}>

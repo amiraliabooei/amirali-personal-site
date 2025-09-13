@@ -13,37 +13,25 @@ export default function SelectedProjects(props){
                                 <section className={Styled.SelectedProjects}>
                                     <h3>Selected Projects</h3>
                                     <div className="row">
-                                        <div className="col-xxl-6 col-xl-6 col-md-12 col-sm-12">
-                                            <div className={Styled.ProjectCard}>
-                                                <div className={Styled.ProjectHeader}>
-                                                    <div className={Styled.ProjectsIcon}>NFC</div>
-                                                    <div>
-                                                        <div className={Styled.ProjectTitle}>NFC Cards with Custom Designs
+                                            {props.projects.map(project => (
+                                                <div className="col-xxl-6 col-xl-6 col-md-12 col-sm-12" key={project.id}>
+                                                    <div className={Styled.ProjectCard}>
+                                                        <div className={Styled.ProjectHeader}>
+                                                            <div className={Styled.ProjectsIcon}>{project.projectIcon}</div>
+                                                            <div>
+                                                                <div className={Styled.ProjectTitle}>{project.projectName}
+                                                                </div>
+                                                                <div className={Styled.ProjectSub}>{project.projectTools}</div>
+                                                            </div>
                                                         </div>
-                                                        <div className={Styled.ProjectSub}>Design • Frontend • Marketing</div>
+                                                        <div className={Styled.ProjectDesc}>
+                                                            {project.projectText}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className={Styled.ProjectDesc}>
-                                                    A small product landing + admin panel for managing NFC designs and
-                                                    orders.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xxl-6 col-xl-6 col-md-12 col-sm-12">
-                                            <div className={Styled.ProjectCard}>
-                                                <div className={Styled.ProjectHeader}>
-                                                    <div className={Styled.ProjectsIcon}>Site</div>
-                                                    <div>
-                                                        <div className={Styled.ProjectTitle}>Personal Portfolio
-                                                        </div>
-                                                        <div className={Styled.ProjectSub}>Branding • Performance</div>
-                                                    </div>
-                                                </div>
-                                                <div className={Styled.ProjectDesc}>
-                                                    Fast, accessible portfolio with CMS integration and resume download.
-                                                </div>
-                                            </div>
-                                        </div>
+
+                                            ))}
+
                                     </div>
                                 </section>
                             </div>

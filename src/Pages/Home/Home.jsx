@@ -16,14 +16,13 @@ export default function Home({ language }) {
     const [element, setElement] = useState(null);
     const [socialNetworks, setSocialNetworks] = useState([]);
     const [topSkills, setTopSkills] = useState([]);
+    const [projects, setProjects] = useState([]);
 
-    // تغییر زبان
     useEffect(() => {
         if (language === 'en') setText(texts.en);
         else if (language === 'fa') setText(texts.fa);
     }, [language]);
 
-    // گرفتن Page Elements
     useEffect(() => {
         axios.get('http://localhost:8000/api/page-elements/')
             .then(res => {
@@ -33,9 +32,8 @@ export default function Home({ language }) {
             .catch(err => console.error(err));
     }, []);
 
-    // گرفتن Social Networks
     useEffect(() => {
-        axios.get('http://localhost:8000/api/socials/') // مسیر API سوشیال‌ها
+        axios.get('http://localhost:8000/api/socials/')
             .then(res => setSocialNetworks(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -46,7 +44,13 @@ export default function Home({ language }) {
             .catch(err => console.error(err));
     }, []);
 
-    if (!element) return <p>Loading...</p>;
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/projects/")
+            .then(res => setProjects(res.data))
+            .catch(err => console.error(err));
+    }, []);
+
+    if (!element)  return <p>Loading...</p>;
 
     return (
         <div className={Styled.homeWrapper}>
@@ -55,7 +59,7 @@ export default function Home({ language }) {
             <Hero data={text} element={element} />
             <About data={text} element={element} socialNetworks={socialNetworks} TopSkills={topSkills} />
             <Skills data={text} element={element} skills={topSkills} />
-            <SelectedProjects data={text} element={element} />
+            <SelectedProjects data={text} element={element} projects={projects} />
             <ContactBox data={text} element={element} />
             <Footer data={text} element={element}  />
         </div>

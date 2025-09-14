@@ -19,6 +19,7 @@ export default function Home({ language }) {
     const [topSkills, setTopSkills] = useState([]);
     const [projects, setProjects] = useState([]);
     const [footerSocials, setFooterSocials] = useState([]);
+    const [resumeLink, setResumeLink] = useState([]);
 
     useEffect(() => {
         if (language === 'en') setText(texts.en);
@@ -30,6 +31,13 @@ export default function Home({ language }) {
             .then(res => {
                 const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
                 setElement(latest);
+            })
+            .catch(err => console.error(err));
+
+        axios.get('http://localhost:8000/api/resume/')
+            .then(res => {
+                const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
+                setResumeLink(latest);
             })
             .catch(err => console.error(err));
 
@@ -55,7 +63,8 @@ export default function Home({ language }) {
         socialNetworks.length === 0 ||
         topSkills.length === 0 ||
         projects.length === 0 ||
-        footerSocials.length === 0;
+        footerSocials.length === 0 ||
+        resumeLink.length ===0;
 
     if (isLoading) return <Loading/>
         ;
@@ -63,7 +72,7 @@ export default function Home({ language }) {
     return (
         <div className={Styled.homeWrapper}>
             <ChangeTitle title={'Amirali Abooei'} />
-            <Header data={text} element={element} />
+            <Header data={text} element={element} resume={resumeLink} />
             <Hero data={text} element={element} />
             <About data={text} element={element} socialNetworks={socialNetworks} TopSkills={topSkills} />
             <Skills data={text} element={element} skills={topSkills} />

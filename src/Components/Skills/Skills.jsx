@@ -2,7 +2,6 @@ import Styled from './Skills.module.css';
 
 export default function Skills(props) {
     // if (!props.AllSkills) return <p>Loading...</p>;
-    console.log(props.skills)
 
     switch (props.data.lan) {
         case 'en':

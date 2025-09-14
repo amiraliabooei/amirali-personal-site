@@ -20,6 +20,7 @@ export default function Home({ language }) {
     const [projects, setProjects] = useState([]);
     const [footerSocials, setFooterSocials] = useState([]);
     const [resumeLink, setResumeLink] = useState([]);
+    const apiLink ='http://82.115.17.185:5000/api/'
 
     useEffect(() => {
         if (language === 'en') setText(texts.en);
@@ -27,33 +28,33 @@ export default function Home({ language }) {
     }, [language]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/page-elements/')
+        axios.get(apiLink+'page-elements/')
             .then(res => {
                 const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
                 setElement(latest);
             })
             .catch(err => console.error(err));
 
-        axios.get('http://localhost:8000/api/resume/')
+        axios.get(apiLink+'resume/')
             .then(res => {
                 const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
                 setResumeLink(latest);
             })
             .catch(err => console.error(err));
 
-        axios.get('http://localhost:8000/api/socials/')
+        axios.get(apiLink+'socials/')
             .then(res => setSocialNetworks(res.data))
             .catch(err => console.error(err));
 
-        axios.get("http://localhost:8000/api/skills/")
+        axios.get(apiLink+"skills/")
             .then(res => setTopSkills(res.data))
             .catch(err => console.error(err));
 
-        axios.get("http://localhost:8000/api/projects/")
+        axios.get(apiLink+"projects/")
             .then(res => setProjects(res.data))
             .catch(err => console.error(err));
 
-        axios.get("http://localhost:8000/api/footer-socials/")
+        axios.get(apiLink+"footer-socials/")
             .then(res => setFooterSocials(res.data))
             .catch(err => console.error(err));
     }, []);

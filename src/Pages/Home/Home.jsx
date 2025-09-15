@@ -20,7 +20,9 @@ export default function Home({ language }) {
     const [projects, setProjects] = useState([]);
     const [footerSocials, setFooterSocials] = useState([]);
     const [resumeLink, setResumeLink] = useState([]);
-    const apiLink ='http://82.115.17.185:5000/api/'
+
+    // به جای IP، مسیر PHP Proxy را قرار بده
+    const apiLink = 'https://astracard.ir/api/';
 
     useEffect(() => {
         if (language === 'en') setText(texts.en);
@@ -28,33 +30,34 @@ export default function Home({ language }) {
     }, [language]);
 
     useEffect(() => {
-        axios.get(apiLink+'page-elements/')
+        axios.get(apiLink + 'page-elements/')
             .then(res => {
                 const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
                 setElement(latest);
             })
             .catch(err => console.error(err));
+        console.log(element)
 
-        axios.get(apiLink+'resume/')
+        axios.get(apiLink + 'resume/')
             .then(res => {
                 const latest = res.data.reduce((max, el) => el.id > max.id ? el : max, res.data[0]);
                 setResumeLink(latest);
             })
             .catch(err => console.error(err));
 
-        axios.get(apiLink+'socials/')
+        axios.get(apiLink + 'socials/')
             .then(res => setSocialNetworks(res.data))
             .catch(err => console.error(err));
 
-        axios.get(apiLink+"skills/")
+        axios.get(apiLink + "skills/")
             .then(res => setTopSkills(res.data))
             .catch(err => console.error(err));
 
-        axios.get(apiLink+"projects/")
+        axios.get(apiLink + "projects/")
             .then(res => setProjects(res.data))
             .catch(err => console.error(err));
 
-        axios.get(apiLink+"footer-socials/")
+        axios.get(apiLink + "footer-socials/")
             .then(res => setFooterSocials(res.data))
             .catch(err => console.error(err));
     }, []);
@@ -65,10 +68,9 @@ export default function Home({ language }) {
         topSkills.length === 0 ||
         projects.length === 0 ||
         footerSocials.length === 0 ||
-        resumeLink.length ===0;
+        resumeLink.length === 0;
 
-    if (isLoading) return <Loading/>
-        ;
+    if (isLoading) return <Loading />;
 
     return (
         <div className={Styled.homeWrapper}>

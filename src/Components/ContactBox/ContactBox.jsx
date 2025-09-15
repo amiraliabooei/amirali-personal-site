@@ -20,7 +20,7 @@ export default function ContactBox(props) {
         }
 
         try {
-            const res = await axios.post("http://82.115.17.185:5000/api/contact/", {
+            const res = await axios.post("https://astracard.ir/api/contact/", {
                 name,
                 email,
                 phone,
